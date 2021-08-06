@@ -8,10 +8,6 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import theme from './styles/_Theme.module.scss';
 import './index.scss';
-//redux
-import { Provider } from 'react-redux';
-import {store} from './store/store';
-
 
 const MuiTheme = createTheme({
     overrides: {
@@ -199,18 +195,15 @@ const MuiTheme = createTheme({
         drawer: 1100,
     },
 });
+
 export default MuiTheme;
+
 ReactDOM.render(
-    <Provider store={store}>
-        <MuiThemeProvider theme={MuiTheme}>
-            <Router>
-                <App />
-            </Router>
-        </MuiThemeProvider>
-    </Provider>,
+    <MuiThemeProvider theme={MuiTheme}>
+        <Router>
+            <App />
+        </Router>
+    </MuiThemeProvider>,
     document.getElementById('root'));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
