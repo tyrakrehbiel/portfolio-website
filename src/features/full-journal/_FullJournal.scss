@@ -1,0 +1,41 @@
+@import '../../styles/Utils';
+
+#descDiv {
+    line-height: 1.8em;
+    height: 7em;       
+    overflow: hidden;
+    text-overflow: 'ellipses';  
+    display: 'flex';
+}
+
+#moreBtn {
+    display: "flex";
+    justify-content: space-between;
+}
+
+$text-color: $primary-text-color;
+.btn{
+    padding:5px 25px;
+    border-radius:10px;
+    font-size:16px;
+}
+
+#create-btn{
+    background-color: #A1E0B3;
+    color:white;
+    @extend .btn
+}
+
+#delete-btn{
+    background-color:rgb(182, 47, 47);
+    color:white;
+    @extend .btn
+}
+
+.multi-carousel-card {    
+    justify-content: center;
+}
+
+h3{
+    color: $text-color;
+}

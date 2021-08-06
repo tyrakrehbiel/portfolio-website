@@ -1,0 +1,38 @@
+// This is our main styling sheet which is an umbrella file containing all of the relevant styles needed for our application.
+// It is imported in index.tsx so that these styles can be applied at the app level and not on a partial level.
+//
+// There are 3 sections of this file.
+// - An import for global styles within the application
+// - An imports list of all .scss files from the common folder
+// - An imports list of all .scss files from the features folder
+//
+// IMPORTANT: IMPORT YOUR PARTIAL STYLESHEETS IN THIS FILE AS YOU CREATE THEM
+// IMPORT ALL GLOBAL APPLICATION STYLES
+@import "./styles/Global";
+@import "./styles/Utils";
+
+// IMPORT ALL STYLES IN COMMON
+@import "./common/header/Header";
+@import "./common/routes/NotFound";
+@import "./common/calendar-utils/action-bar/ActionBar";
+@import "./common/calendar-utils/action-bar/ActionBarFC";
+@import "./common/calendar-utils/action-bar/custom-button-group/CustomButtonGroup";
+@import "./common/calendar-utils/add-entry-menu/AddEntryMenu";
+
+// IMPORT ALL STYLES IN FEATURES (partials)
+@import "./features/day-calendar/DayCalendar";
+@import "./features/full-event/FullEvent";
+@import "./features/full-journal/FullJournal";
+@import "./features/full-tag-list/FullTagList";
+@import "./features/login-register/LoginRegister";
+@import "./features/month-calendar/MonthCalendar";
+@import "./features/user-profile/UserProfile";
+@import "./features/week-calendar/WeekCalendar";
+@import "./features/year-calendar/YearCalendar";
+@import "./features/quick-create-tag/QuickCreateTag";
+@import "./features/modal/OurModal";
+@import "./features/event-modal/CreateEventModal";
+@import "./features/delete-event-modal/DeleteEventModal";
+@import "./features/tag-menu-filter/TagMenuFilter";
+@import "./features/create-edit-journal/CreateEditJournal";
+@import "./features/attachment-card/AttachmentCard";

@@ -1,0 +1,98 @@
+{
+  "name": "life-mappa-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "5": "^0.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@fullcalendar/daygrid": "^5.8.0",
+    "@fullcalendar/interaction": "^5.8.0",
+    "@fullcalendar/react": "^5.8.0",
+    "@fullcalendar/timegrid": "^5.8.0",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/ical": "^0.6.3",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.8",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "clsx": "^1.1.1",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.2.9",
+    "ical": "^0.8.0",
+    "ical.js": "^1.4.0",
+    "jquery": "^3.6.0",
+    "jwt-decode": "^3.1.2",
+    "material-ui": "^0.20.2",
+    "mui-bueno": "^2.0.6",
+    "node-sass": "^6.0.0",
+    "react": "^17.0.2",
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{ts,tsx} --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.6",
+    "@types/jwt-decode": "^3.1.0",
+    "@types/react-color": "^3.0.4",
+    "@types/react-fontawesome": "^1.6.5",
+    "@types/react-redux": "^7.1.18",
+    "@types/redux-mock-store": "^1.0.3",
+    "@types/redux-thunk": "^2.1.0",
+    "@types/yup": "^0.29.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "axios-mock-adapter": "^1.19.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-react": "^7.24.0",
+    "redux-mock-store": "^1.5.4",
+    "sonar-scanner": "^3.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/axios/**"
+    ]
+  }
+}

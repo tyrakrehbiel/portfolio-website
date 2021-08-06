@@ -1,0 +1,190 @@
+@import '../../styles/Utils';
+
+    #wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 700;
+        width: inherit;
+        outline: 0;
+    }
+    #event-box {
+        z-index: 100;
+        background: white;
+        position: relative;
+        margin: auto;
+        border-radius: 8px;
+    }
+
+    #journal-buttons {
+        margin-left: 50%;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #modal-name{
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem;
+        color: black;
+    }
+
+    #cancel-button{ // rename class to unique name
+        font-size: 0.8rem;
+        border: none;
+        border-radius: 3px;
+        margin-left: 0.5rem;
+        background: none;
+        :hover {
+        cursor: pointer;
+        }
+        padding:3px 5px;
+        display:inline-block;
+        background:#ccc;
+        font-size:16px;
+        color:white;
+        margin-left: 60%;
+    }
+
+    #create-button{ // rename class to unique name
+        font-size: 0.8rem;
+        border: none;
+        border-radius: 3px;
+        margin-left: 0.5rem;
+        background: none;
+        :hover {
+        cursor: pointer;
+        }
+        padding:3px 5px;
+        display:inline-block;
+        background: blue;
+        font-size:16px;
+        color: white;
+        //margin-left: 80%;
+    }
+
+/*
+#start-date-time{
+    //fill with stuff
+}
+
+#end-date-time{
+    //fill with stuff
+}
+*/
+
+.modal-form {
+    display: flex;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    overflow-y:'scroll';
+    .event-modal-form {
+        @extend .detail-form;
+        display: flex;
+        //position: absolute;
+        max-width: breakpoints(sm) !important;
+
+        
+    }
+
+    .MuiOutlinedInput-input {
+        align-self: center;
+        padding-top: 10px;
+        padding-right: 12px;
+        padding-bottom: 10px;
+        padding-left: 12px;
+        width: 90%
+    }
+    .MuiFormControl-root {
+        max-width: 100%;
+    }
+}
+
+.detail-form {
+    margin-top: 2em;
+    z-index: 50;
+    width: 100% !important;
+    overflow:'scroll';
+    .MuiCard-root {
+        width:100%;
+        background-color: palette(grey, 50);
+    }
+    .MuiCardHeader-title {
+        font-size: 2em !important;
+        font-weight: 500 !important;
+    }
+    .MuiCardContent-root {
+        border-top: #e2e2e2 solid 1px;
+        border-bottom: #e2e2e2 solid 1px;
+    }
+    .MuiCardActions-root {
+        padding: 1em;
+    }
+    .MuiChip-root {
+        height: 25px !important;
+        border-radius: 25px;
+    }
+    .MuiSelect-root {
+        padding-top: 7px !important;
+        padding-bottom: 6px !important;
+        min-height: 29px !important;
+    }
+    .select-padding {
+        padding: 10px !important;
+        label {
+            padding: 0.75em;
+        }
+    }
+
+    #form-card {
+        margin-bottom: 25px;
+    }
+    #scroll-div {
+        overflow:scroll;
+        max-height:550px;
+    }
+}
+
+.outer-container {
+
+    .recurrence-container {
+        margin-top: 20px;
+    }
+
+    .date-container {
+        align-self: center;
+        align-content: center;
+        margin-left: 11px;
+        width: 100%;
+
+        DateTimePickers {
+            margin-bottom: em;
+        }
+    }
+
+    .tag-chips-container {
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .attendee-textfield {
+        margin-left: 8px;
+        margin-bottom: 5px;
+    }
+
+    .attachment-list {
+        margin-left: 8px;
+    }
+
+    
+}
+
+.space-between {
+    .action-buttons {
+        border-radius: 8px;
+    }
+}
+

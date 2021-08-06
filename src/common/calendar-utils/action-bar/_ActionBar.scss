@@ -1,0 +1,88 @@
+@import '../../../styles/Utils';
+
+$button-height: 1.5rem;
+
+.calendar-action-bar{
+    &.grid {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-areas: 
+      'left-action right-action';
+      height: 5%;
+      //margin-bottom: .2%;
+      margin-top: .5%;
+      //background-color: cyan;
+    }
+  
+    .calendar-year-selector{
+      grid-area: 'left-action';
+      display: flex;
+      align-items: center;
+    }
+  
+    .year-typography{
+      @include typography(h4);
+      width: 5em;
+      text-align: center;
+      align-self: center;
+      
+    } 
+  
+    .prev-next-buttons{
+      background: transparent;
+      border: none;
+      color: palette(secondary,main);
+    }
+  
+    .prev-next-buttons:hover{
+      color: palette(secondary,dark);
+    }
+  
+    .right-action-group{
+
+      grid-area: 'right-action';
+      display: flex;
+      border-radius: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    
+      .outlined-buttons{
+        color: $primary-text-color;
+        border-radius: 8px;
+        justify-items: center;
+        font-size: .7rem;
+        font-weight: bold;
+        height: $button-height;
+        margin-right: 1%;
+    
+        &.today-button:hover{
+          font-weight: bolder;
+          background-color: palette(secondary,dark);;
+          color: white;
+        }
+    
+        &.add-button{
+          display: flex;
+          justify-content: center;
+          text-align: center;
+        }
+    
+        &.add-button:hover{
+          font-weight: bolder;
+          background-color: palette(secondary,dark);;
+          color: white;
+        }
+        .add-icon{
+          font-size: .6rem;
+        }
+      }
+    
+      .calendar-icon-buttons{
+        width: 2em;
+        height: 2em;
+        font-size: .8rem;
+        justify-self: flex-end;
+        
+      }
+    }
+  }

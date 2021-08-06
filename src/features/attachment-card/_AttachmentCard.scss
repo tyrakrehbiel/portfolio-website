@@ -1,0 +1,53 @@
+@import '../../styles/Utils';
+
+.create-edit-journal-root {
+    .attachment-card-box {
+        .attachment-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: transparent!important;
+            padding-left: 5%;
+        }
+    
+        .add-attachment-button {
+            max-width: 220px;
+            min-width: 20px;
+            max-height: 30px;
+            min-height: 30px; 
+            border-radius: 15px;
+            margin-left: 5px;
+            background-color: white;
+        }
+    
+        .attachment-card-media {
+            max-height: 80vh;
+            object-fit: scale-down;
+        }
+    }    
+}
+
+.create-journal-modal {
+    .attachment-card-box {
+        .attachment-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: transparent!important;
+            padding-left: 5%;
+            border: none;
+        }
+    
+        .add-attachment-button {
+            max-width: 220px;
+            min-width: 20px;
+            max-height: 30px;
+            min-height: 30px; 
+            border-radius: 15px;
+            background-color: #e0e0e0;
+        }
+    
+        .attachment-card-media {
+            max-height: 80vh;
+            object-fit: scale-down;
+        }
+    }    
+}

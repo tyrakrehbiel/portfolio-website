@@ -1,0 +1,25 @@
+@import '_Theme.scss';
+// Used to export/share variables between _Theme.scss and the global MuiTheme
+:export {
+    header_height: $header-height;
+    @each $size, $value in map-get($theme, breakpoints) {
+        breakpoints_#{$size}: $value;
+    }
+    @each $type, $palette in map-get($theme, palette) {
+        @each $tone, $value in map-get(map-get($theme, palette), $type) {
+            palette_#{$type}_#{$tone}: $value;
+        }
+    }
+    @each $depth, $value in map-get($theme, shadows) {
+        shadows_#{$depth}: $value;
+    }
+    typography_fontFamily: map-get(map-get($theme, typography), fontFamily);
+    @each $variant, $properties in map-get($theme, typography) {
+        @each $property, $value in map-get(map-get($theme, typography), $variant) {
+            typography_#{$variant}_#{$property}: $value;
+        }
+    }
+    @each $attribute, $value in map-get($theme, shape) {
+        shape_#{$attribute}: $value;
+    }
+}

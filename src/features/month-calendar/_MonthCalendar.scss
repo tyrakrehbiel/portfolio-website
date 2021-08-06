@@ -1,0 +1,112 @@
+@import '../../styles/Utils';
+
+.calendar-month {
+    // Styling for everything within the "date grid"
+    .fc {
+
+        .fc-daygrid-day-frame {
+            min-height: 80%;
+            margin: 0 auto;
+            margin-top: .5em;
+            background-color: palette(background, paper);
+            @include button();
+            width: 95%;
+            height: 90%;
+            box-shadow: shadows(3);
+        }
+
+        //Center the day buttons
+        .fc-daygrid-day {
+            margin: auto;
+
+        }
+        //Puts day numbers on left side
+        .fc-daygrid-event {
+            justify-content: flex-start;
+        }
+
+        .fc-daygrid-day-top {
+            flex-direction: row !important;
+        }
+
+        //Sunday Monday Tuesday ... ect bar
+        .fc-toolbar.fc-header-toolbar {
+            margin-bottom: .2em;
+        }
+        //Todays styling
+        .fc-day-today {
+            background-color: inherit !important;
+            .fc-daygrid-day-frame {
+            box-shadow: 0 0 0 2pt black !important;
+            }
+        }
+
+        //Popover that occurs when there are too many events to fit in a day
+        .fc-popover {
+            z-index: 3;
+        }
+
+        // card styling
+        CardHeader {
+            Fab {
+                padding: 0em;
+            }
+        }
+    }
+
+    // Styling for prev title next chunk
+    .fc-toolbar-chunk {
+        display: none !important;
+    }
+
+    // Styling for the entire calendar
+    .fc-theme-standard{
+        margin: auto;
+        max-height: 85vh;
+        max-width: 95vw;
+    }
+
+    //Removes default grid lines
+    .fc-theme-standard .fc-scrollgrid {
+        border: none;
+
+        
+    }
+    //Removes default grid lines
+    .fc-theme-standard td, .fc-theme-standard th {
+        border: none;
+    }
+
+    .fc-col-header {
+        background-color: palette(background, paper);
+        @include shape;
+        margin-bottom: 1em;
+        box-shadow: shadows(3);
+    }
+
+    .fc-day-other .fc-daygrid-day-frame {
+        background-color: palette(grey, 200);
+        color: palette(grey, 900);
+    }
+
+}
+
+.drawer-button {
+    z-index: 2;
+    top: 50%;
+    height: 10%;
+    width: 5%;
+}
+
+.drawer-button-icon {
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.event-import-form {
+    background-color: white;
+    padding: 2em;
+    //border-radius: 1.5em;
+}

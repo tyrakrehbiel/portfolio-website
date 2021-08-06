@@ -1,0 +1,13 @@
+@import "./Utils";
+// GLOBAL STYLES
+// Styling blocks that are commonly applied (referenced across different files)
+// Wraps the page content and any access/navigational panels
+.page {
+    @media (max-width: breakpoints(xl)) {
+        display: flex;
+        width: 100%;
+    }
+    @media (max-width: breakpoints(md) - 1) {
+        display: block;
+    }
+}

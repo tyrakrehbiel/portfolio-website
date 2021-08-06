@@ -1,0 +1,170 @@
+@import '../../../styles/Utils';
+
+.day-preview-list{
+
+    &.day-preview-list{
+        position: absolute; //ensures cell will not expand to the size of the popup
+        display: flex;
+        flex-grow: 1;
+        min-width: 250px;
+        max-width: 500px;
+        z-index: 600;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px;
+        box-shadow: shadows(5); //change to match month header
+    }
+
+    .day-preview-header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .day-title{
+        position: relative;
+        @include typography(body1);  
+        text-transform: uppercase;
+        font-size: .9rem !important;
+        text-align: center;
+        width: 100%;
+        padding-top: 5%;
+        margin-left: .8rem; //allow text to be centered in the header (offset by size of close btn
+    }
+
+    .close-btn{
+        width: .8rem;
+        height: .8rem;
+        margin-bottom: 5%;
+    }
+
+    .close-icon{
+        font-size: .8rem !important;
+    }
+
+    .li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .add-button-div{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .preview-cards{
+        position: relative;
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+        padding: 7px;
+    }
+
+    .preview-footer{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .day-action-area{
+        //border: 1px solid rgb(196, 196, 196);
+        border: .5px solid palette(secondary,main);
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        box-shadow: shadows(2);
+        //background-color: palette(secondary,dark);
+    }
+
+    .preview-add-button{
+        border-radius: 3px;
+        @include typography(body1);  
+        text-transform: uppercase;
+        font-weight: bold !important;
+        font-size: .6rem !important;
+        justify-self: flex-end;
+        border: .5px solid  palette(secondary,main);
+    }
+
+    .preview-icon{
+        font-size: .9rem !important;
+        color: palette(secondary,main);
+    }
+
+    .preview-icon:hover{
+        font-size: .9rem !important;
+        font-weight: bolder !important;
+        color: palette(secondary,dark);
+        text-shadow: shadows(3);
+    }
+
+    .preview-add-button:hover{
+        font-weight: bolder !important;
+        color: palette(secondary,dark);
+        //color: white;
+    }
+
+    .preview-add-icon{
+        font-size: .7rem !important;
+        justify-self: flex-start;
+        transition: fill 0.5s ease;
+    }
+
+    //customize scrollbars to our page design
+
+    ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+    /* Track */
+    ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    }
+
+       
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(211, 211, 211, 0.676); 
+        border-radius: 10px;
+        //background-color: brown;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(211, 211, 211); 
+    }
+
+}
+
+//having issues centering - when modal-form is used directly, it won't center
+.day-preview-modal-form {
+    position:fixed; //adjust so modal is in window center
+    top: 10%!important;
+    left: 50% !important;
+    justify-self: center !important;
+    align-self: center;
+    display: flex;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    overflow-y:'scroll';
+
+    .event-modal-form {
+        @extend .detail-form;
+        display: flex;
+        //position: absolute;
+        max-width: breakpoints(sm) !important;
+    }
+
+
+
+    .MuiOutlinedInput-input {
+        align-self: center;
+        padding-top: 10px;
+        padding-right: 12px;
+        padding-bottom: 10px;
+        padding-left: 12px;
+        width: 90%
+    }
+    .MuiFormControl-root {
+        max-width: 100%;
+    }
+}

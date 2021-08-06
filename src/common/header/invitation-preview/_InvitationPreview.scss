@@ -1,0 +1,87 @@
+@import '../../../styles/Utils';
+
+.invite-preview{
+
+    &.entry-card {
+      position: relative;
+      background-color: white;
+      overflow: hidden;
+      cursor: pointer;
+      list-style: none;
+      padding: 1.5em;
+      padding-bottom: 1.5em;
+      display: flex;
+      flex-direction: column;
+      width: 30em;
+      max-height: 20em;
+      margin-bottom: 5%;
+      box-shadow: shadows(2);
+    }
+
+    .entry-header{
+      display: flex;
+      width: 100%;
+    }
+
+    .avatar{
+      height: 30px;
+      width: 30px;
+      border-radius: 100%;
+      align-self: center;
+      margin-right: 1.5em;
+    }
+
+    .header-text{
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    
+    .title{
+      @include typography(h4);  
+      font-size: 1.5rem !important;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .subtitle{
+      @include typography(h2);  
+      font-size: .9rem !important;
+    }
+
+    &.content{
+      padding-top: 5%;
+    }
+  
+    .desc{
+      @include typography(body1);  
+      font-size: .9rem !important;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 2%;
+    }
+  
+    .details{
+      @include typography(body1);  
+      font-size: .9rem !important;
+    }
+
+    .decision-button{
+      float:right;
+      
+      &.accept{
+        color:darkgreen;
+        border-width: 3px;
+      }
+      &.decline{
+        color:darkred;
+        border-width: 3px;
+      }
+      
+    }
+
+  
+  }

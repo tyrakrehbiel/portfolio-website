@@ -1,0 +1,65 @@
+@import '../../styles/Utils';
+
+.header-bar {
+    &.app-bar{
+        flex-grow: 1;
+        background: white !important;
+        height: 4em !important;
+        // box-shadow: none;
+        // border-bottom: 1px solid lightgray;
+    }
+
+    .tool-bar{
+        display:-ms-inline-flexbox;
+        justify-content: space-between;
+    }
+
+    .logo {
+        height: 1.5rem;
+    }
+
+    .person-icon{
+       color: $primary-text-color;
+       height: 1.3rem;
+    }
+    .invite-icon{
+        color: $primary-text-color;
+        height: 1.3rem;
+    }
+
+   
+}
+
+
+#invitation-menu{
+    .MuiMenu-list {
+        max-width: 50em;
+        min-width: 30em;
+    }
+        
+
+    .accepted{
+        color: darkgreen !important;
+        margin-left: auto;
+        padding-right: .5em;
+        padding-left: 3em;
+        
+    }
+
+    .declined{
+        color: darkred !important;
+        margin-left: auto;
+        padding-right: .5em;
+        padding-left: 3em;
+    }
+
+    .need-response{
+        background-color: lightgrey !important;
+        float: right !important;
+        margin-left: auto !important;
+        padding-right: .5em !important;
+    }
+
+}
+
+

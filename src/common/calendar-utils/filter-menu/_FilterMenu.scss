@@ -1,0 +1,18 @@
+@import '../../../styles/Utils';
+
+.filter-menu{
+    &.paper{
+        border-radius: 8px;
+        position: relative
+    }
+
+    .sub-header{
+      text-align: left;
+      text-transform: uppercase;
+      @include typography(body2);
+    }
+
+    .tag-name{
+
+    }
+}

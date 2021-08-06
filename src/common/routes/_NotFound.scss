@@ -1,0 +1,59 @@
+@import '../../styles/Utils';
+
+$background-gradient: linear-gradient(180deg, $primary-color 40%, $info-color 90%);
+
+.main-not-found {
+    background: $background-gradient;
+    height: 100vh;
+    justify-content: center;
+
+    .paper{
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-self: center;
+        height: 80vh;
+        justify-content: center;
+    }
+    
+    .title {
+        padding-top: 1%;
+        @include typography(h6);  
+        font-size: 3.5rem !important;
+        text-align: center;
+    }
+    
+    .subtitle{
+        padding-top: 1%;
+        @include typography(subtitle1);
+        font-size: 2.5rem !important;
+        text-align: center;
+    }
+    
+    .button-box{
+        padding-top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .button{
+        background-color: $primary-color;
+        width: 20%;
+        @include button();
+    }
+    
+    .map-box{
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .map-icon{
+        font-size: 5rem;
+    }
+
+}
+
+
+
+
+
