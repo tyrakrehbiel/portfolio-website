@@ -3,13 +3,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 import './index.scss'
 
-import Header from './common/header/Header';
+import TempPage from './features/temp-page/TempPage';
 
 const App: React.FC = () => {
     return (
         <>
             <CssBaseline />
-            <Header />
+            <TempPage />
         </>
     );
 };
