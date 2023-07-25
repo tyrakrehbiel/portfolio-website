@@ -19,7 +19,7 @@ const TempPage: React.FC = () => {
                 @tyrakrehbiel.art
             </Link>
             <Typography variant="h5" className="thanks">
-                Thank you!
+                Thank you! Update!
             </Typography>
         </div>
     );
