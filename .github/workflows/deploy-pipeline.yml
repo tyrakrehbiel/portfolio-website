@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request: # todo: remove pull_request
     branches:
       - main
 
@@ -20,7 +20,8 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 13.x
+          node-version: 20
+          cache: 'yarn'
     
     - name: Install packages
       run: yarn
