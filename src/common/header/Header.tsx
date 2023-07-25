@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar, Button, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Button, Typography } from '@mui/material';
 
 const Header: React.FC = () => {    
     return (

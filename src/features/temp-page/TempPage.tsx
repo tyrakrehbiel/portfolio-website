@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, Typography } from '@material-ui/core';
+import { Link, Typography } from '@mui/material';
 import './_TempPage.scss';
 
 const TempPage: React.FC = () => {
@@ -19,10 +19,10 @@ const TempPage: React.FC = () => {
                 @tyrakrehbiel.art
             </Link>
             <Typography variant="h5" className="thanks">
-                Thank you!
+                Thank you! Update!
             </Typography>
         </div>
-    )
+    );
 };
 
 export default TempPage;

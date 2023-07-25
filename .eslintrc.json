@@ -1,9 +1,4 @@
 {
-    "settings": {
-        "react": {
-            "version": "16.12.0"
-        }
-    },
     "env": {
         "browser": true,
         "es2021": true
@@ -38,6 +33,9 @@
             "error",
             "single"
         ],
-        "react/prop-types": "off"
+        "semi": [
+            "error",
+            "always"
+        ]
     }
 }

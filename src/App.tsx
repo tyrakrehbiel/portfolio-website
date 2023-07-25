@@ -1,7 +1,6 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import './App.css';
-import './index.scss'
+import { CssBaseline } from '@mui/material';
+import './index.scss';
 
 import TempPage from './features/temp-page/TempPage';
 
