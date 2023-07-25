@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import './_TempPage.scss';
 
 const TempPage: React.FC = () => {
@@ -8,10 +8,7 @@ const TempPage: React.FC = () => {
             <Typography variant="h1" className="title">
                 Website currently under maintenance
             </Typography>
-            {/* <Typography variant="h1" className="title">
-                Website currently under maintenance
-            </Typography>
-            <hr />
+            {/* <hr />
             <Typography variant="h2" className="text">
                 In the meantime, check out Tyra&apos;s instagram
             </Typography>
