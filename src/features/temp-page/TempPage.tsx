@@ -5,7 +5,9 @@ import './_TempPage.scss';
 const TempPage: React.FC = () => {
     return (
         <div className="temp-page-container text-div">
-            Removed content!
+            <Typography variant="h1" className="title">
+                Website currently under maintenance
+            </Typography>
             {/* <Typography variant="h1" className="title">
                 Website currently under maintenance
             </Typography>
