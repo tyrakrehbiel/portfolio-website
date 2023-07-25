@@ -33,9 +33,15 @@
             "error",
             "single"
         ],
+        "react/display-name": "off",
         "semi": [
             "error",
             "always"
         ]
+    },
+    "settings": {
+        "react": {
+            "version": "18.2.0"
+        }
     }
 }

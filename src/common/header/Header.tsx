@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                 </Toolbar>
             </AppBar>
         </div>
-    )
+    );
 };
 
 export default Header;
