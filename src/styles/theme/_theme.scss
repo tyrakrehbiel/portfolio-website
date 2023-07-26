@@ -1,5 +1,3 @@
-
-
 $theme: (
     breakpoints: (
         xs: 0px,
@@ -8,71 +6,7 @@ $theme: (
         lg: 1280px,
         xl: 1920px,
     ),
-    palette: (
-        primary: (
-            light: #d5dbf0,
-            main: $primary-color,
-            dark: darken($primary-color, 12%),
-            contrastText: #fff,
-        ),
-        secondary: (
-            light: #c0edea,
-            main: $secondary-color,
-            dark: darken($secondary-color, 12%),
-            contrastText: #fff,
-        ),
-        error: (
-            light: lighten($error-color, 12%),
-            main: $error-color,
-            dark: darken($error-color, 12%),
-            contrastText:#fff,
-        ),
-        warning: (
-            light: lighten($warning-color, 12%),
-            main: $warning-color,
-            dark: darken($warning-color, 12%),
-            contrastText:rgba(0, 0, 0, 0.87),
-        ),
-        info: (
-            light: lighten($info-color, 12%),
-            main: $info-color,
-            dark: darken($info-color, 12%),
-            contrastText:#fff,
-        ),
-        success: (
-            light: lighten($success-color, 12%),
-            main: $success-color,
-            dark: darken($success-color, 12%),
-            contrastText:rgba(0, 0, 0, 0.87),
-        ),
-        text: (
-            primary:darken($primary-text-color, 12%),
-            secondary:rgba(0, 0, 0, 0.65),
-            disabled:rgba(0, 0, 0, 0.38),
-            hint: #767B8B,
-        ),
-        background: (
-            default: #F0F0F0,
-            paper: #fff,
-        ),
-        grey: (
-            50: #fafafa,
-            100: #f5f5f5,
-            200: #eeeeee,
-            300: #e0e0e0,
-            350: #cdcdcd,
-            400: #bdbdbd,
-            500: #9e9e9e,
-            600: #757575,
-            700: #616161,
-            800: #424242,
-            900: #212121,
-            A100: #d5d5d5,
-            A200: #aaaaaa,
-            A400: #303030,
-            A700: #525252,
-        ),
-    ),
+    palette: $palette,
     shadows: (
         0: none,
         1: (2px 2px 5px 0px rgba(0,0,0,0.05)),
@@ -100,9 +34,7 @@ $theme: (
         23: (2px 23px 36px 3px rgba(0,0,0,0.14), 0px 9px 44px 8px rgba(0,0,0,0.12)),
         24: (2px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12)),
     ),
-    typography: (
-        
-    ),
+    typography: $typography,
     shape: (
         borderRadius: 3px,
     ),
@@ -110,4 +42,3 @@ $theme: (
         borderRadius: 15px,
     ),
 );
-

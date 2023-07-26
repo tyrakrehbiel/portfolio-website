@@ -1,4 +1,3 @@
-// Functions and Mixins used by individual SASS files to access theme variables
 @function breakpoints($size) {
     $breakpoints: map-get($theme, breakpoints);
     @if map-has-key($breakpoints, $size){
