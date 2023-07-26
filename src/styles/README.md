@@ -1,8 +1,10 @@
-# 2-Utils
+# Styles Explained
+
+## 2-Utils
 
 Purpose: define common functions, mixins, and style exports
 
-## _functions.scss
+### _functions.scss
 
 Purpose: 
 
@@ -31,7 +33,7 @@ How to use:
 
 ```
 
-## _mixins.scss
+### _mixins.scss
 
 Purpose
 
@@ -43,7 +45,7 @@ How to use:
 @use typography(h1);
 ```
 
-## _theme.module.scss
+### _theme.module.scss
 
 Purpose: export style theme
 
