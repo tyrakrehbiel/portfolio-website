@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.scss';
+import './styles/index.scss';
 import App from './App';
 import theme from './styles/theme';
 import reportWebVitals from './reportWebVitals';

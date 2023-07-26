@@ -1,27 +1,27 @@
 $white: #FFF;
 $black: #000;
 
-$primary: red;
-$primary-contrast: white;
+$primary: #ff0000;
+$primary-contrast: #ffffff;
 
-$secondary: blue;
-$secondary-contrast: white;
+$secondary: #0000ff;
+$secondary-contrast: #ffffff;
 
-$error: red;
-$error-contrast: white;
+$error: #ff0000;
+$error-contrast: #ffffff;
 
-$warning: yellow;
-$warning-contrast: white;
+$warning: #ffff00;
+$warning-contrast: #ffffff;
 
-$info: blue;
-$info-contrast: white;
+$info: #0000ff;
+$info-contrast: #ffffff;
 
-$success: green;
-$success-contrast: white;
+$success: #008000;
+$success-contrast: #ffffff;
 
-$text-primary: black;
-$text-secondary: gray;
-$text-disabled: lightgray;
+$text-primary: #000000;
+$text-secondary: #808080;
+$text-disabled: #d3d3d3;
 
 $palette: (
     primary: (
@@ -34,19 +34,19 @@ $palette: (
     ),
     error: (
         main: $error,
-        contrastText: $alert-contrast,
+        contrastText: $error-contrast,
     ),
     warning: (
         main: $warning,
-        contrastText: $alert-contrast,
+        contrastText: $warning-contrast,
     ),
     info: (
         main: $info,
-        contrastText: $alert-contrast,
+        contrastText: $info-contrast,
     ),
     success: (
         main: $success,
-        contrastText: $alert-contrast,
+        contrastText: $success-contrast,
     ),
     text: (
         primary: $text-primary,

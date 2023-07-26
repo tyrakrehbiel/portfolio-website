@@ -1,17 +1,20 @@
 # Styles Explained
 
+## Structure
+
+<!-- Todo: add docs -->
+
 ## 2-Utils
 
 Purpose: define common functions, mixins, and style exports
 
 ### _functions.scss
 
-Purpose: 
+Purpose: <!-- Todo: add definition -->
 
 How to use:
 
 ```scss
-
 .class {
     // set specific width
     width: breakpoints(md);
@@ -35,7 +38,7 @@ How to use:
 
 ### _mixins.scss
 
-Purpose
+Purpose: <!-- Todo: add definition -->
 
 How to use:
 
@@ -47,7 +50,7 @@ How to use:
 
 ### _theme.module.scss
 
-Purpose: export style theme
+Purpose: export style theme <!-- Todo: add definition -->
 
 How to use:
 
