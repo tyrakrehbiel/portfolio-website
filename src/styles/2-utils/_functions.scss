@@ -1,0 +1,38 @@
+@function breakpoints($size) {
+    @if map-has-key($breakpoints, $size){
+        @return map-get($breakpoints, $size);
+    }
+    @warn "`#{$size}` does not match the available breakpoint values (xs, sm, md, lg, xl)";
+    @return null;
+}
+
+@function palette($type, $value) {
+    @if map-has-key($palette, $type) {
+        $type: map-get($palette, $type);
+            @if map-has-key($type, $value){
+                @return map-get($type, $value);
+            }
+            @warn "`#{$value}` does not exist in light palette type";
+            @return null;        
+    }
+    @warn "`#{$color}` does not exist in light palette";
+    @return null;
+}
+
+@function shadows($depth) {
+    @if map-has-key($shadows, $depth){
+        @return map-get($shadows, $depth);
+    } @else {
+        @warn "`#{$depth}` does not match the available shadow levels (0-24)";
+        @return null;
+    }
+}
+
+@function shape($attribute) {
+    $shape: map-get($theme, shape);
+    @if map-has-key($shape, $attribute){
+        @return map-get($shape, $attribute);
+    }
+    @warn "`#{$attribute}` is not an attribute of shape";
+    @return null;
+}

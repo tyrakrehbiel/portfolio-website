@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.scss';
+import './styles/index.scss';
 import App from './App';
-import muiTheme from './styles/muiTheme';
+import theme from './styles/theme';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <ThemeProvider theme={muiTheme}>
+    <ThemeProvider theme={theme}>
         <BrowserRouter>
             <App />
         </BrowserRouter>
