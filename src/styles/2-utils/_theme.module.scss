@@ -2,7 +2,6 @@
 @use '../1-theme/variables' as vars;
 @use '../1-theme/colors' as colors;
 
-// todo: how to use
 :export {
     @each $size, $value in vars.$breakpoints {
         breakpoints_#{$size}: $value;
