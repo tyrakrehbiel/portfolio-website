@@ -1,9 +1,0 @@
-:root {
-    @media (max-width: breakpoints(xl)) {
-        display: flex;
-        width: 100%;
-    }
-    @media (max-width: (breakpoints(md) - 1)) {
-        display: block;
-    }
-}

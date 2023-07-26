@@ -1,5 +1,5 @@
+// todo: how to use
 @function breakpoints($size) {
-    $breakpoints: map-get($theme, breakpoints);
     @if map-has-key($breakpoints, $size){
         @return map-get($breakpoints, $size);
     }
@@ -8,31 +8,30 @@
 }
 
 @function palette($type, $value) {
-    $palette: map-get($theme, palette);
-    @if map-has-key($palette, $type){
+    @if map-has-key($palette, $type) {
         $type: map-get($palette, $type);
             @if map-has-key($type, $value){
                 @return map-get($type, $value);
             }
-            @warn "`#{$value}` does not exist in palette type";
+            @warn "`#{$value}` does not exist in light palette type";
             @return null;        
     }
-    @warn "`#{$color}` does not exist in palette";
+    @warn "`#{$color}` does not exist in light palette";
     @return null;
 }
 
 @function shadows($depth) {
-    $shadows: map-get($theme, shadows);
     @if map-has-key($shadows, $depth){
         @return map-get($shadows, $depth);
+    } @else {
+        @warn "`#{$depth}` does not match the available shadow levels (0-24)";
+        @return null;
     }
-    @warn "`#{$depth}` does not match the available shadow levels (0-24)";
-    @return null;
 }
 
 @function shape($attribute) {
     $shape: map-get($theme, shape);
-    @if map-has-key($shape, $attribute) {
+    @if map-has-key($shape, $attribute){
         @return map-get($shape, $attribute);
     }
     @warn "`#{$attribute}` is not an attribute of shape";

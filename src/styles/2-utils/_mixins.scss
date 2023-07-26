@@ -1,5 +1,7 @@
+@use '../1-theme/typography' as *;
+
+// todo: how to use
 @mixin typography($variant) {
-    $typography: map-get($theme, typography);
     @if map-has-key($typography, $variant){
         font-family: map-get(map-get($typography, $variant), fontFamily) !important;
         font-weight: map-get(map-get($typography, $variant), fontWeight) !important;
@@ -10,3 +12,4 @@
         @warn "`#{$variant}` does not match the available typography variants";
     }
 }
+
