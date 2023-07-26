@@ -1,12 +1,8 @@
-@import '../../styles/Utils';
-
 .header-bar {
     &.app-bar{
         flex-grow: 1;
         background: white !important;
         height: 4em !important;
-        // box-shadow: none;
-        // border-bottom: 1px solid lightgray;
     }
 
     .tool-bar{
