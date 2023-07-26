@@ -1,4 +1,10 @@
 // todo: how to use
+
+/** How to use
+
+breakpoints(md)
+
+**/
 @function breakpoints($size) {
     @if map-has-key($breakpoints, $size){
         @return map-get($breakpoints, $size);
