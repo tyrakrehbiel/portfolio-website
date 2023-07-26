@@ -1,10 +1,10 @@
-name: Build & deploy
+name: Build & Deploy
 
 on:
   push:
     branches:
       - main
-  pull_request: # todo: remove pull_request
+  pull_request:
     branches:
       - main
 
@@ -17,14 +17,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Install Node.js
-      uses: actions/setup-node@v1
+    - name: Set up NodeJS environment
+      uses: actions/setup-node@v2
       with:
-          node-version: 20
-          cache: 'yarn'
-    
-    - name: Install packages
+        node-version: 20
+        cache: 'yarn'
+
+    - name: Install dependencies
       run: yarn
+  
+    - name: Check linting and formatting
+      run: yarn lint
+    
+    - name: Execute test cases
+      run: |
+        yarn --network-timeout 100000
+        yarn test --coverage
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Build project
       run: yarn build
