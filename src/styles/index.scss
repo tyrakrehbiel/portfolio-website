@@ -1,5 +1,6 @@
 @import
     './1-theme/colors',
+    './1-theme/global',
     './1-theme/typography',
     './1-theme/variables';
 
@@ -9,7 +10,8 @@
     './2-utils/theme.module';
 
 @import
-    './3-components/buttons';
+    './3-components/buttons',
+    './3-components/layout';
 
 @import
     './4-pages/not-found',

@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Portfolio Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Resource](https://www.uxpin.com/studio/blog/creating-ux-portfolio-4-dos-donts/)
 
-## Available Scripts
+## What to include in a portfolio
 
-In the project directory, you can run:
+1. Intro/homepage introducing yourself
+1. Simple navigation
+1. High-quality case studies—from initial concept to final results
+1. About me page
+1. Contact page
+1. Link to download your resume in PDF format
+1. Links to design-relevant social media—LinkedIn, Behance, Dribbble
 
-### `yarn start`
+### Navigation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Header**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Work/portfolio
+1. About
+1. Contact
+1. Resume/CV
 
-### `yarn test`
+**Footer**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Social media links
 
-### `yarn build`
+### Case Studies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Project overview (problem/goal/purpose/deliverables)
+1. Your role & responsibilities (UX designer, researcher, project manager, solo project)
+1. Initial user research summary
+1. User personas & user journey map
+1. Initial concepts and ideas – paper wireframes, digital wireframes, low-fidelity prototypes (consider redrawing your paper wireframes, so they’re neat and legible)
+1. High-fidelity mockups & prototypes
+1. Usability testing
+1. Final designs after usability testing
+1. Link to the final product or mockup (if available)
+1. Product successes (did your design increase signups, revenue, etc.)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[UX Design Challenges](https://uxtools.co/challenges/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### About Page
 
-### `yarn eject`
+1. A brief intro about who you are, where you’re from, and where you studied—mention hobbies but don’t go into too much detail
+1. Why you chose UX design as a career path
+1. Your work ethic
+1. Your career goals and aspirations
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Contact Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. only a contact form (full name, email, message), preferably
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Resume Download
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Put a link to your resume in the main navigation, on the about page, and footer.
 
-## Learn More
+### Links to Socials
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Dribbble
+1. LinkedIn
+1. Behance
+1. Medium (if you write about UX topics)

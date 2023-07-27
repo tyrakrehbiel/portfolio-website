@@ -2,13 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-jest.mock('./features/home/Home', () =>
-    () => <div data-testid='home' />
+jest.mock('./common/layout/Layout', () =>
+    () => <div data-testid='layout' />
 );
 
 describe('App', () => {
-    it('renders home page on load', () => {
+    it('renders page layout on load', () => {
         render(<App />);
-        expect(screen.getByTestId('home')).toBeInTheDocument();
+        expect(screen.getByTestId('layout')).toBeInTheDocument();
     });
 });
