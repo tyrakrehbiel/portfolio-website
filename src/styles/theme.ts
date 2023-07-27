@@ -4,14 +4,14 @@ import tm from './2-utils/_theme.module.scss';
 const theme = createTheme({
     palette: {
         mode: 'light',
-        // primary: {
-        //     main: tm.palette_primary_main,
-        //     contrastText: tm.palette_primary_contrastText,
-        // },
-        // secondary: {
-        //     main: tm.palette_secondary_main,
-        //     contrastText: tm.palette_secondary_contrastText,
-        // },
+        primary: {
+            main: tm.palette_primary_main,
+            contrastText: tm.palette_primary_contrastText,
+        },
+        secondary: {
+            main: tm.palette_secondary_main,
+            contrastText: tm.palette_secondary_contrastText,
+        },
         error: {
             main: tm.palette_error_main,
             contrastText: tm.palette_error_contrastText,
