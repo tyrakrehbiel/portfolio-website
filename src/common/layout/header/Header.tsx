@@ -28,10 +28,22 @@ const Header: React.FC = () => {
 
     return (
         <AppBar>
-            <Toolbar variant='dense'>
-                <Typography variant='h5' className='header-title'>
+            <Toolbar variant='dense' className='header-content'>
+                <Typography variant='h5' onClick={() => navigate('/')} className='header-title'>
                     Tyra Krehbiel
                 </Typography>
+                <div>
+                    {routes.map((route) => (
+                        <Button
+                            key={route.label}
+                            onClick={route.onClick}
+                            style={{ color: 'white' }}
+                            size='small'
+                        >
+                            {route.label}
+                        </Button>
+                    ))}
+                </div>
             </Toolbar>
         </AppBar>
     );

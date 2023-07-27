@@ -6,21 +6,22 @@ import Home from './features/home/Home';
 import About from './features/about/About';
 import Contact from './features/contact/Contact';
 import Portfolio from './features/portfolio/Portfolio';
-import Header from './common/header/Header';
-import Footer from './common/footer/Footer';
+import Layout from './common/layout/Layout';
+import NotFound from './features/not-found/NotFound';
 
 const App: React.FC = () => {
     return (
         <>
             <CssBaseline />
-            <Header />
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/portfolio' element={<Portfolio />} />
-            </Routes>
-            <Footer />
+            <Layout>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path='/portfolio' element={<Portfolio />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+            </Layout>
         </>
     );
 };
