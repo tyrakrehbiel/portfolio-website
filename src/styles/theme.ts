@@ -12,10 +12,10 @@ const theme = createTheme({
         //     main: tm.palette_secondary_main,
         //     contrastText: tm.palette_secondary_contrastText,
         // },
-        error: {
-            main: tm.palette_error_main,
-            contrastText: tm.palette_error_contrastText,
-        },
+        // error: {
+        //     main: tm.palette_error_main,
+        //     contrastText: tm.palette_error_contrastText,
+        // },
         warning: {
             main: tm.palette_warning_main,
             contrastText: tm.palette_warning_contrastText,
