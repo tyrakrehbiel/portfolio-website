@@ -1,8 +1,8 @@
 import React from 'react';
 import { CssBaseline } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
 
 import Home from './features/home/Home';
-import { Route, Routes } from 'react-router-dom';
 import About from './features/about/About';
 import Contact from './features/contact/Contact';
 import Portfolio from './features/portfolio/Portfolio';
