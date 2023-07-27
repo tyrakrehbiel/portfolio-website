@@ -16,18 +16,18 @@ const theme = createTheme({
         //     main: tm.palette_error_main,
         //     contrastText: tm.palette_error_contrastText,
         // },
-        // warning: {
-        //     main: tm.palette_warning_main,
-        //     contrastText: tm.palette_warning_contrastText,
-        // },
-        // info: {
-        //     main: tm.palette_info_main,
-        //     contrastText: tm.palette_info_contrastText,
-        // },
-        // success: {
-        //     main: tm.palette_success_main,
-        //     contrastText: tm.palette_success_contrastText,
-        // },
+        warning: {
+            main: tm.palette_warning_main,
+            contrastText: tm.palette_warning_contrastText,
+        },
+        info: {
+            main: tm.palette_info_main,
+            contrastText: tm.palette_info_contrastText,
+        },
+        success: {
+            main: tm.palette_success_main,
+            contrastText: tm.palette_success_contrastText,
+        },
         text: {
             primary: tm.palette_text_primary,
             secondary: tm.palette_text_secondary,
