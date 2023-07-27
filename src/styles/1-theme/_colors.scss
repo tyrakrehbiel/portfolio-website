@@ -1,27 +1,26 @@
 $white: #ffffff;
-$black: #ffffff;
 
-$primary: #ffffff;
-$primary-contrast: #ffffff;
+$primary: #5543E6;
+$primary-contrast: $white;
 
-$secondary: #ffffff;
-$secondary-contrast: #ffffff;
+$secondary: #E13A62;
+$secondary-contrast: $white;
 
-$error: #ffffff;
-$error-contrast: #ffffff;
+$error: #a52525;
+$error-contrast: $white;
 
-$warning: #ffffff;
-$warning-contrast: #ffffff;
+$warning: #d9b32c;
+$warning-contrast: #000000;
 
-$info: #ffffff;
-$info-contrast: #ffffff;
+$info: #458bd6;
+$info-contrast: $white;
 
-$success: #ffffff;
-$success-contrast: #ffffff;
+$success: #55a331;
+$success-contrast: $white;
 
-$text-primary: #ffffff;
-$text-secondary: #ffffff;
-$text-disabled: #ffffff;
+$text-primary: #000000;
+$text-secondary: #444444;
+$text-disabled: #777777;
 
 $palette: (
     primary: (
@@ -70,7 +69,7 @@ $palette: (
         A700: #20253de4
     ),
     background: (
-        default: $white,
+        default: #eaeaea,
         paper: $white
     )
 );
