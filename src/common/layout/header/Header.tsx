@@ -37,9 +37,9 @@ const Header: React.FC = () => {
                 <div className='header-buttons'>
                     {routes.map((route) => (
                         <Button
+                            className='header-button'
                             key={route.label}
                             onClick={route.onClick}
-                            style={{ color: 'white' }}
                             size='small'
                         >
                             {route.label}
