@@ -3,20 +3,6 @@ import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButto
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    appBar: {
-        zIndex: theme.zIndex.drawer + 1,
-    },
-    drawer: {
-        width: 250,
-        flexShrink: 0,
-    },
-    drawerContainer: {
-        overflow: 'auto',
-        paddingTop: theme.spacing(8),
-    },
-}));
-
 interface AppRoute {
     label: string;
     path?: string;
@@ -68,7 +54,7 @@ const Header: React.FC = () => {
     return (
         <>
             <AppBar className='header' elevation={0}>
-                <Toolbar variant='dense' className='header-content'>
+                <Toolbar className='header-content'>
                     <div className='header-icon' onClick={() => navigate('/')}>
                         <Typography className='header-icon-text'>
                             tk
@@ -97,6 +83,7 @@ const Header: React.FC = () => {
                 </Toolbar>
             </AppBar>
             <Drawer
+                className='header-drawer'
                 anchor='top'
                 open={openDrawer}
                 onClose={toggleDrawer}

@@ -43,10 +43,10 @@
 }
 
 @function shape($attribute) {
-    $shape: map-get($theme, shape);
-    @if map-has-key($shape, $attribute){
+    @if map-has-key($shape, $attribute) {
         @return map-get($shape, $attribute);
+    } @else {
+        @warn "`#{$attribute}` is not an attribute of shape";
+        @return null;
     }
-    @warn "`#{$attribute}` is not an attribute of shape";
-    @return null;
 }

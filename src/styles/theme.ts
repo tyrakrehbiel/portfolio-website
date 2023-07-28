@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import tm from './base/_theme.module.scss';
+import zIndex from '@mui/material/styles/zIndex';
 
 const theme = createTheme({
     palette: {
@@ -140,6 +141,9 @@ const theme = createTheme({
             fontWeight: parseInt(tm.typography_overline_fontWeight),
             fontSize: tm.typography_overline_fontSize
         }
+    },
+    zIndex: {
+        appBar: zIndex.drawer + 1
     }
 });
 
