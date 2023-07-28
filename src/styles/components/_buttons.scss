@@ -1,0 +1,12 @@
+.header-button {
+    color: palette(text, primary) !important;
+
+    &:hover, &.active {
+        color: palette(primary, main) !important;
+        border-bottom: 2px solid palette(primary, main);
+    }
+}
+
+button {
+    border-radius: 0 !important;
+}

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { AppBar, Toolbar, Button, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const downloadResume = () => {
         console.log('downloading resume');
@@ -13,16 +14,16 @@ const Header: React.FC = () => {
     const routes = [
         {
             label: 'About',
-            onClick: () => navigate('/about')
+            path: '/about'
         }, {
             label: 'Portfolio',
-            onClick: () => navigate('/portfolio')
+            path: '/portfolio'
         }, {
             label: 'Resume',
             onClick: downloadResume
         }, {
             label: 'Contact',
-            onClick: () => navigate('/contact')
+            path: '/contact'
         }
     ];
 
@@ -37,9 +38,9 @@ const Header: React.FC = () => {
                 <div className='header-buttons'>
                     {routes.map((route) => (
                         <Button
-                            className='header-button'
+                            className={`header-button ${location.pathname == route.path ? 'active' : ''}`}
                             key={route.label}
-                            onClick={route.onClick}
+                            onClick={route.onClick ?? (() => navigate(route.path))}
                             size='small'
                         >
                             {route.label}

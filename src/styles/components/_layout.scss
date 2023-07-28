@@ -2,35 +2,3 @@
     padding-top: 50px;
     min-height: 100vh;
 }
-
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: palette(background, default) !important;
-
-    .header-content {
-        width: 100%;
-        max-width: 90%;
-    
-        .header-icon {
-            @extend .flex-center-all;
-            background-color: black;
-            height: 40px;
-            width: 40px;
-            cursor: pointer;
-    
-            .header-icon-text {
-                font-size: 1.45rem;
-                color: white;
-            }
-        }
-
-        .header-buttons {
-            padding-left: 5%;
-            gap: 20px;
-            width: 100%;
-            display: flex;
-        }
-    }
-}
