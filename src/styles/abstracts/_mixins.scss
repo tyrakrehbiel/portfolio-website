@@ -1,4 +1,4 @@
-@use '../1-abstracts/typography' as typ;
+@use '../abstracts/typography' as typ;
 
 @mixin typography($variant) {
     @if map-has-key(typ.$typography, $variant){
