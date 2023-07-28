@@ -1,6 +1,6 @@
-@use '../abstracts/typography' as typ;
-@use '../abstracts/variables' as vars;
-@use '../abstracts/colors' as colors;
+@use '../base/typography' as typ;
+@use '../base/variables' as vars;
+@use '../base/colors' as colors;
 
 :export {
     @each $size, $value in vars.$breakpoints {

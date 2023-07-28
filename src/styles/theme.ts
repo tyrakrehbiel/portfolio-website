@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import tm from './abstracts/_theme.module.scss';
+import tm from './base/_theme.module.scss';
 
 const theme = createTheme({
     palette: {

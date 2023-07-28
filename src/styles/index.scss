@@ -1,11 +1,10 @@
 @import
-    './abstracts/colors',
-    './abstracts/global',
-    './abstracts/typography',
-    './abstracts/variables',
-    './abstracts/functions',
-    './abstracts/mixins',
-    './abstracts/theme.module';
+    './base/colors',
+    './base/global',
+    './base/typography',
+    './base/variables',
+    './base/mixins',
+    './base/theme.module';
 
 @import
     './components/buttons',
