@@ -27,12 +27,14 @@ const Header: React.FC = () => {
     ];
 
     return (
-        <AppBar>
+        <AppBar className='header' elevation={0}>
             <Toolbar variant='dense' className='header-content'>
-                <Typography variant='h5' onClick={() => navigate('/')} className='header-title'>
-                    Tyra Krehbiel
-                </Typography>
-                <div>
+                <div className='header-icon' onClick={() => navigate('/')}>
+                    <Typography className='header-icon-text'>
+                        tk
+                    </Typography>
+                </div>
+                <div className='header-buttons'>
                     {routes.map((route) => (
                         <Button
                             key={route.label}
