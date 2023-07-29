@@ -38,8 +38,22 @@ const Header: React.FC = () => {
     };
 
     const downloadResume = () => {
-        console.log('downloading resume');
-        toggleDrawer();
+        const pdfUrl = 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing';
+    
+        // Create a hidden anchor element
+        const anchor = document.createElement('a');
+        anchor.href = pdfUrl;
+        anchor.target = '_blank';
+        anchor.download = 'Tyra_Krehbiel_Resume.pdf';
+    
+        // Append the anchor to the body and click it programmatically
+        document.body.appendChild(anchor);
+        anchor.click();
+    
+        // Remove the anchor from the body to avoid clutter
+        document.body.removeChild(anchor);
+
+        setOpenDrawer(false);
     };
 
     const handleClick = (route: AppRoute) => {
