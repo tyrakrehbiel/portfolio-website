@@ -1,9 +1,8 @@
 .home {
     text-align: center;
     margin: auto;
-    width: 50%;
+    width: 75%;
     padding: 5%;
-    height: 200vh;
 
     .title {
         margin-bottom: 10%;
@@ -17,7 +16,8 @@
         }
     }
 
-    .thanks {
-        margin-top: 10%;
+    .signature {
+        font-family: Merriweather;
+        font-weight: bold;
     }
 }

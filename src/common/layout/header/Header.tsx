@@ -30,7 +30,7 @@ const routes: AppRoute[] = [
 
 /**
  * Header navigation component. Converts to a drawer on small screens.
- * 
+ * TODO: on portfolio click, open sub menu with art vs case studies
  * @returns 
  */
 const Header: FC = () => {
