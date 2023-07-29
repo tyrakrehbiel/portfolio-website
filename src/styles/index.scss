@@ -1,18 +1,16 @@
 @import
-    './1-theme/colors',
-    './1-theme/global',
-    './1-theme/typography',
-    './1-theme/variables';
+    './base/colors',
+    './base/global',
+    './base/typography',
+    './base/variables',
+    './base/mixins',
+    './base/theme.module';
 
 @import
-    './2-utils/functions',
-    './2-utils/mixins',
-    './2-utils/theme.module';
+    './components/buttons',
+    './components/header',
+    './components/layout';
 
 @import
-    './3-components/buttons',
-    './3-components/layout';
-
-@import
-    './4-pages/not-found',
-    './4-pages/home';
+    './pages/not-found',
+    './pages/home';

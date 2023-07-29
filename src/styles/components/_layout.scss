@@ -1,0 +1,6 @@
+.page-content {
+    min-height: calc(100vh - shape(headerHeight)); // at minimum, take up full screen
+    width: 90%;
+    margin: auto; // center content horizontally
+    margin-top: shape(headerHeight); // shift content lower than header
+}

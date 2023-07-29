@@ -1,3 +1,17 @@
+@use '../base/typography' as typ;
+
+@mixin typography($variant) {
+    @if map-has-key(typ.$typography, $variant){
+        font-family: map-get(map-get(typ.$typography, $variant), fontFamily) !important;
+        font-weight: map-get(map-get(typ.$typography, $variant), fontWeight) !important;
+        font-size: map-get(map-get(typ.$typography, $variant), fontSize) !important;
+        line-height: map-get(map-get(typ.$typography, $variant), lineHeight) !important;
+        letter-spacing: map-get(map-get(typ.$typography, $variant), letterSpacing) !important;
+    } @else {
+        @warn "`#{$variant}` does not match the available typography variants";
+    }
+}
+
 @function breakpoints($size) {
     @if map-has-key($breakpoints, $size){
         @return map-get($breakpoints, $size);
@@ -29,10 +43,10 @@
 }
 
 @function shape($attribute) {
-    $shape: map-get($theme, shape);
-    @if map-has-key($shape, $attribute){
+    @if map-has-key($shape, $attribute) {
         @return map-get($shape, $attribute);
+    } @else {
+        @warn "`#{$attribute}` is not an attribute of shape";
+        @return null;
     }
-    @warn "`#{$attribute}` is not an attribute of shape";
-    @return null;
 }

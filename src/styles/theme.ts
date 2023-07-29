@@ -1,5 +1,8 @@
 import { createTheme } from '@mui/material/styles';
-import tm from './2-utils/_theme.module.scss';
+import tm from './base/_theme.module.scss';
+import zIndex from '@mui/material/styles/zIndex';
+
+type TextTransform = 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'full-width' | 'full-size-kana';
 
 const theme = createTheme({
     palette: {
@@ -128,7 +131,8 @@ const theme = createTheme({
         button: {
             fontFamily: tm.typography_button_fontFamily,
             fontWeight: parseInt(tm.typography_button_fontWeight),
-            fontSize: tm.typography_button_fontSize
+            fontSize: tm.typography_button_fontSize,
+            textTransform: tm.typography_button_textTransform as TextTransform
         },
         caption: {
             fontFamily: tm.typography_caption_fontFamily,
@@ -140,6 +144,9 @@ const theme = createTheme({
             fontWeight: parseInt(tm.typography_overline_fontWeight),
             fontSize: tm.typography_overline_fontSize
         }
+    },
+    zIndex: {
+        appBar: zIndex.drawer + 1
     }
 });
 
