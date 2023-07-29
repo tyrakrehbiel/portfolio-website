@@ -1,0 +1,74 @@
+import { screen, render, fireEvent } from '@testing-library/react';
+import Header from './Header';
+
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockNavigate,
+    useLocation: jest.fn()
+}));
+
+jest.mock('@mui/material', () => ({
+    ...jest.requireActual('@mui/material'),
+    useMediaQuery: jest.fn(),
+}));
+
+const mockUseLocation = jest.requireMock('react-router-dom').useLocation;
+const mockUseMediaQuery = jest.requireMock('@mui/material').useMediaQuery;
+
+describe('Header', () => {
+
+    beforeEach(() => {
+        mockUseLocation.mockReturnValue({ pathname: '/about' });
+        mockNavigate.mockClear();
+    });
+
+    it('renders buttons in header appbar on larger screens', () => {
+        mockUseMediaQuery.mockReturnValue(true);
+
+        render(<Header />);
+
+        expect(screen.getByTestId('appbar-header-nav')).toBeInTheDocument();
+        expect(screen.queryByTestId('drawer-header-nav')).not.toBeInTheDocument();
+    });
+
+    it('renders buttons in header drawer on smaller screens', () => {
+        mockUseMediaQuery.mockReturnValue(false);
+
+        render(<Header />);
+
+        expect(screen.queryByTestId('appbar-header-nav')).not.toBeInTheDocument();
+
+        // click button to open drawer
+        const menuButton = screen.getByTestId('nav-menu-button');
+        fireEvent.click(menuButton);
+        
+        expect(screen.getByTestId('drawer-header-nav')).toBeInTheDocument();
+    });
+
+    it('handles button click', () => {
+        mockUseMediaQuery.mockReturnValue(true);
+
+        render(<Header />);
+
+        const buttons = screen.getAllByTestId('header-button');
+        expect(buttons).toHaveLength(4);
+
+        // click contact tab
+        const contact = buttons[3];
+        expect(contact).toHaveTextContent('Contact');
+        fireEvent.click(contact);
+        expect(mockNavigate).toHaveBeenCalledWith('/contact');
+
+        // click resume
+        const resume = buttons[2];
+        expect(resume).toHaveTextContent('Resume');
+        fireEvent.click(resume);
+        expect(mockNavigate).not.toHaveBeenCalledWith('/resume');
+
+        // click logo button
+        const logo = screen.getByTestId('logo-button');
+        fireEvent.click(logo);
+        expect(mockNavigate).toHaveBeenCalledWith('/');
+    });
+});

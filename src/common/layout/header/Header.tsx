@@ -24,6 +24,7 @@ const routes: AppRoute[] = [
 ];
 
 /**
+ * Header navigation component. Converts to a drawer on small screens.
  * 
  * @returns 
  */
@@ -91,7 +92,7 @@ const Header: FC = () => {
                     className={`header-button ${drawerClass} ${activeClass}`}
                     key={route.label}
                     onClick={() => handleClick(route)}
-                    // size='small'
+                    data-testid='header-button'
                 >
                     {route.label}
                 </Button>
@@ -104,15 +105,15 @@ const Header: FC = () => {
             <AppBar className='header' elevation={0}>
                 <Toolbar className='header-content'>
                     <div className='header-icon' onClick={() => navigate('/')}>
-                        <Typography className='header-icon-text'>tk</Typography>
+                        <Typography className='header-icon-text' data-testid='logo-button'>tk</Typography>
                     </div>
                     {showHeaderNavigation
                         ? (
-                            <div className='header-buttons'>
+                            <div className='header-buttons' data-testid='appbar-header-nav'>
                                 {routeButtons(false)}
                             </div>
                         ) : (
-                            <IconButton onClick={toggleDrawer}>
+                            <IconButton onClick={toggleDrawer} data-testid='nav-menu-button'>
                                 <MenuIcon />
                             </IconButton>
                         )
@@ -124,6 +125,7 @@ const Header: FC = () => {
                 anchor='top'
                 open={openDrawer}
                 onClose={toggleDrawer}
+                data-testid='drawer-header-nav'
             >
                 {routeButtons(true)}
             </Drawer>
