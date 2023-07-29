@@ -8,6 +8,11 @@ interface AppRoute {
     path?: string;
 }
 
+/**
+ * List of all application routes. Will be mapped to buttons in navigation.
+ * 
+ * If no path is provided, a custom onClick will be used
+ */
 const routes: AppRoute[] = [
     {
         label: 'About',
@@ -34,6 +39,7 @@ const Header: FC = () => {
     const location = useLocation();
 
     const theme = useTheme();
+    /** show header navigation instead of drawer for screen sizes larger than sm breakpoint */
     const showHeaderNavigation = useMediaQuery(theme.breakpoints.up('sm'));
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -55,34 +61,35 @@ const Header: FC = () => {
         setOpenDrawer(p => !p);
     };
 
-    const downloadResume = () => {
+    /**
+     * Handles opening resume pdf in Google Drive in another browser tab
+     */
+    const openResume = () => {
         const pdfUrl = 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing';
-    
-        // Create a hidden anchor element
-        const anchor = document.createElement('a');
-        anchor.href = pdfUrl;
-        anchor.target = '_blank';
-        anchor.download = 'Tyra_Krehbiel_Resume.pdf';
-    
-        // Append the anchor to the body and click it programmatically
-        document.body.appendChild(anchor);
-        anchor.click();
-    
-        // Remove the anchor from the body to avoid clutter
-        document.body.removeChild(anchor);
+        
+        window.open(pdfUrl, '_blank');
 
         setOpenDrawer(false);
     };
 
+    /**
+     * Handles clicking navigation button to either navigate to specified route path, or custom onClick
+     * @param route 
+     */
     const handleClick = (route: AppRoute) => {
         if (route.label == 'Resume') {
-            downloadResume();
+            openResume();
         } else if (route.path) {
             navigate(route.path);
         }
         setOpenDrawer(false);
     };
 
+    /**
+     * Map routes to navigation buttons
+     * @param drawer 
+     * @returns 
+     */
     const routeButtons = (drawer: boolean) => (
         routes.map((route) => {
             const drawerClass = drawer ? 'drawer' : '';
