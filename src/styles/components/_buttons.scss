@@ -5,11 +5,9 @@
     &:hover, &.active {
         color: palette(primary, main) !important;
     }
-
     &.active {
         border-bottom: 2px solid palette(primary, main);
     }
-
     &.drawer {
         margin: auto;
         padding-top: 8px;

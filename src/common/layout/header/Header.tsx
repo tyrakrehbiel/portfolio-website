@@ -23,6 +23,10 @@ const routes: AppRoute[] = [
     }
 ];
 
+/**
+ * TODO: on screen size change, close drawer
+ * @returns 
+ */
 const Header: React.FC = () => {
 
     const navigate = useNavigate();
@@ -65,28 +69,34 @@ const Header: React.FC = () => {
         setOpenDrawer(false);
     };
 
+    const routeButtons = (drawer: boolean) => (
+        routes.map((route) => {
+            const drawerClass = drawer ? 'drawer' : '';
+            const activeClass = location.pathname == route.path ? 'active' : '';
+            return (
+                <Button
+                    className={`header-button ${drawerClass} ${activeClass}`}
+                    key={route.label}
+                    onClick={() => handleClick(route)}
+                    // size='small'
+                >
+                    {route.label}
+                </Button>
+            );
+        })
+    );
+
     return (
         <>
             <AppBar className='header' elevation={0}>
                 <Toolbar className='header-content'>
                     <div className='header-icon' onClick={() => navigate('/')}>
-                        <Typography className='header-icon-text'>
-                            tk
-                        </Typography>
+                        <Typography className='header-icon-text'>tk</Typography>
                     </div>
                     {showHeaderNavigation
                         ? (
                             <div className='header-buttons'>
-                                {routes.map((route) => (
-                                    <Button
-                                        className={`header-button ${location.pathname == route.path ? 'active' : ''}`}
-                                        key={route.label}
-                                        onClick={() => handleClick(route)}
-                                        size='small'
-                                    >
-                                        {route.label}
-                                    </Button>
-                                ))}
+                                {routeButtons(false)}
                             </div>
                         ) : (
                             <IconButton onClick={toggleDrawer}>
@@ -102,16 +112,7 @@ const Header: React.FC = () => {
                 open={openDrawer}
                 onClose={toggleDrawer}
             >
-                {routes.map((route) => (
-                    <Button
-                        className={`header-button drawer ${location.pathname == route.path ? 'active' : ''}`}
-                        key={route.label}
-                        onClick={() => handleClick(route)}
-                        size='small'
-                    >
-                        {route.label}
-                    </Button>
-                ))}
+                {routeButtons(true)}
             </Drawer>
         </>
     );
