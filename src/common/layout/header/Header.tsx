@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
@@ -24,10 +24,10 @@ const routes: AppRoute[] = [
 ];
 
 /**
- * TODO: on screen size change, close drawer
+ * 
  * @returns 
  */
-const Header: React.FC = () => {
+const Header: FC = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -35,7 +35,20 @@ const Header: React.FC = () => {
     const theme = useTheme();
     const showHeaderNavigation = useMediaQuery(theme.breakpoints.up('sm'));
 
-    const [openDrawer, setOpenDrawer] = React.useState<boolean>(false);
+    const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+
+    useEffect(() => { // close drawer when window size is sm or larger
+        const handleResize = () => {
+            if (window.innerWidth > theme.breakpoints.values.sm) setOpenDrawer(false);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [theme.breakpoints.values.sm]);
 
     const toggleDrawer = () => {
         setOpenDrawer(p => !p);
