@@ -50,6 +50,9 @@ describe('Header', () => {
     });
 
     it('handles button click', () => {
+        const mockWindowOpen = jest.fn();
+        jest.spyOn(window, 'open').mockImplementation(mockWindowOpen);
+
         mockUseMediaQuery.mockReturnValue(true);
 
         render(<Header />);
@@ -69,6 +72,7 @@ describe('Header', () => {
         expect(resume).toHaveTextContent('Resume');
         fireEvent.click(resume);
         expect(mockNavigate).not.toHaveBeenCalledWith('/resume');
+        expect(mockWindowOpen).toHaveBeenCalled();
 
         // click logo button
         const logo = screen.getByTestId('logo-button');
