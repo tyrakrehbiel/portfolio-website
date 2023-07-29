@@ -29,8 +29,9 @@ describe('Header', () => {
 
         render(<Header />);
 
+        // page should have header navigation, not drawer
         expect(screen.getByTestId('appbar-header-nav')).toBeInTheDocument();
-        expect(screen.queryByTestId('drawer-header-nav')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('nav-menu-button')).not.toBeInTheDocument();
     });
 
     it('renders buttons in header drawer on smaller screens', () => {
@@ -38,6 +39,7 @@ describe('Header', () => {
 
         render(<Header />);
 
+        // page should have drawer navigation, not header
         expect(screen.queryByTestId('appbar-header-nav')).not.toBeInTheDocument();
 
         // click button to open drawer
@@ -52,6 +54,7 @@ describe('Header', () => {
 
         render(<Header />);
 
+        // get all navigation buttons
         const buttons = screen.getAllByTestId('header-button');
         expect(buttons).toHaveLength(4);
 
