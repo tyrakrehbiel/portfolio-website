@@ -1,9 +1,20 @@
 .header-button {
     color: palette(text, primary) !important;
+    text-transform: uppercase;
 
     &:hover, &.active {
         color: palette(primary, main) !important;
+    }
+
+    &.active {
         border-bottom: 2px solid palette(primary, main);
+    }
+
+    &.drawer {
+        margin: auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: max-content;
     }
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, makeStyles, Theme } from '@mui/material';
+import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
 
@@ -7,6 +7,21 @@ interface AppRoute {
     label: string;
     path?: string;
 }
+
+const routes: AppRoute[] = [
+    {
+        label: 'About',
+        path: '/about'
+    }, {
+        label: 'Portfolio',
+        path: '/portfolio'
+    }, {
+        label: 'Resume'
+    }, {
+        label: 'Contact',
+        path: '/contact'
+    }
+];
 
 const Header: React.FC = () => {
 
@@ -26,21 +41,6 @@ const Header: React.FC = () => {
         console.log('downloading resume');
         toggleDrawer();
     };
-    
-    const routes: AppRoute[] = [
-        {
-            label: 'About',
-            path: '/about'
-        }, {
-            label: 'Portfolio',
-            path: '/portfolio'
-        }, {
-            label: 'Resume'
-        }, {
-            label: 'Contact',
-            path: '/contact'
-        }
-    ];
 
     const handleClick = (route: AppRoute) => {
         if (route.label == 'Resume') {
@@ -88,19 +88,16 @@ const Header: React.FC = () => {
                 open={openDrawer}
                 onClose={toggleDrawer}
             >
-                <List>
-                    {routes.map((route) => (
-                        <ListItem
-                            key={route.label}
-                            disablePadding
-                            onClick={() => handleClick(route)}
-                        >
-                            <ListItemButton>
-                                <ListItemText primary={route.label} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
+                {routes.map((route) => (
+                    <Button
+                        className={`header-button drawer ${location.pathname == route.path ? 'active' : ''}`}
+                        key={route.label}
+                        onClick={() => handleClick(route)}
+                        size='small'
+                    >
+                        {route.label}
+                    </Button>
+                ))}
             </Drawer>
         </>
     );

@@ -56,7 +56,8 @@ $typography: (
     button: (
         fontFamily: 'Open Sans',
         fontWeight: 600,
-        fontSize: 0.95rem
+        fontSize: 0.75rem,
+        textTransform: uppercase
     ),
     caption: (
         fontFamily: 'Open Sans',
