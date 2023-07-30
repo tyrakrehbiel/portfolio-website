@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 
 const content = {
     greeting: 'Hello and welcome!',
@@ -13,14 +13,27 @@ const content = {
 
 const Home: React.FC = () => {
     return (
-        <div className='home'>
-            <div className='portrait' />
-            <Typography variant='h1' className='title'>{content.greeting}</Typography>
-            <Typography className='text'>{content.intro}</Typography>
-            <Typography className='text'>{content.primary}</Typography>
-            <Typography className='text'>{content.secondary}</Typography>
-            <Typography className='text'>{content.thanks}</Typography>
-        </div>
+        <Grid container className='home'>
+            <Grid item container xs={12} className='content-section-1'>
+                <Grid item xs={12} md={6}>
+                    <Typography variant='h1'>Tyra Krehbiel</Typography>
+                    <Typography variant='h2'>Full Stack Software Developer,</Typography>
+                    <Typography variant='h2'>UI/UX Designer,</Typography>
+                    <Typography variant='h2'>& Artist</Typography>
+                    <Button variant='contained'>Hire Me</Button>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <div style={{ height: '500px', backgroundColor: 'gray' }} />
+                </Grid>
+            </Grid>
+            <Grid item xs={12}>
+                <Typography variant='h1' className='title'>{content.greeting}</Typography>
+                <Typography className='text'>{content.intro}</Typography>
+                <Typography className='text'>{content.primary}</Typography>
+                <Typography className='text'>{content.secondary}</Typography>
+                <Typography className='text'>{content.thanks}</Typography>
+            </Grid>
+        </Grid>
     );
 };
 
