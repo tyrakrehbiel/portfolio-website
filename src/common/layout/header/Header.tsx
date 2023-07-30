@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
+import { AppBar, Toolbar, Button, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import logo from '../../../media/logo/android-chrome-192x192.png';
@@ -38,8 +38,8 @@ const Header: FC = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-
     const theme = useTheme();
+    
     /** show header navigation instead of drawer for screen sizes larger than sm breakpoint */
     const showHeaderNavigation = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -112,22 +112,14 @@ const Header: FC = () => {
         <>
             <AppBar className='header' elevation={0}>
                 <Toolbar className='header-content'>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <img src={logo} onClick={() => navigate('/')} style={{ height: '25px'}} />
-                        <Typography color='black' variant='h6'>Tyra Krehbiel</Typography>
-                        <Typography color='black'>Software Developer</Typography>
-                    </div>
-                   
+                    <img src={logo} className='logo' onClick={() => navigate('/')} />
                     {showHeaderNavigation
-                        ? (
-                            <div className='header-buttons' data-testid='appbar-header-nav'>
-                                {routeButtons(false)}
-                            </div>
-                        ) : (
-                            <IconButton onClick={toggleDrawer} data-testid='nav-menu-button'>
-                                <MenuIcon />
-                            </IconButton>
-                        )
+                        ? <div className='header-buttons' data-testid='appbar-header-nav'>
+                            {routeButtons(false)}
+                        </div>
+                        : <IconButton onClick={toggleDrawer} data-testid='nav-menu-button'>
+                            <MenuIcon />
+                        </IconButton>
                     }
                 </Toolbar>
             </AppBar>

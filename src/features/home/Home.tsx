@@ -8,7 +8,7 @@ const content = {
     'As a software developer, I strive to craft seamless solutions that not only function flawlessly but also engage users through captivating interfaces. ' +
     'From intuitive app designs to user-friendly websites, I believe in the power of design to elevate the digital experience.',
     secondary: 'Here, you\'ll explore a curated fusion of my technical skill and artistic expressions.',
-    thanks: 'Thank you for visiting, and let\'s infuse innovation with creativity!'
+    thanks: 'Thank you for visiting!'
 };
 
 const Home: React.FC = () => {
@@ -20,7 +20,6 @@ const Home: React.FC = () => {
             <Typography className='text'>{content.primary}</Typography>
             <Typography className='text'>{content.secondary}</Typography>
             <Typography className='text'>{content.thanks}</Typography>
-            <Typography className='signature'>- Tyra Krehbiel</Typography>
         </div>
     );
 };
