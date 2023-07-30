@@ -2,12 +2,12 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
-import Home from './features/home/Home';
-import About from './features/about/About';
-import Contact from './features/contact/Contact';
-import Portfolio from './features/portfolio/Portfolio';
-import Layout from './common/layout/Layout';
-import NotFound from './features/not-found/NotFound';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
+import Contact from './pages/contact/Contact';
+import Portfolio from './pages/portfolio/Portfolio';
+import Layout from './components/layout/Layout';
+import NotFound from './pages/not-found/NotFound';
 
 const App: React.FC = () => {
     return (

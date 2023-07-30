@@ -26,9 +26,10 @@ describe('Home', () => {
         expect(container.querySelectorAll('p')).toHaveLength(4);
     });
 
-    it('navigates to call to action page', () => {
+    it('navigates to contact page on button click', () => {
         render(<Home />);
 
+        // find and click call to action button
         const button = screen.getByRole('button');
         expect(button).toHaveTextContent('Hire Me');
         
