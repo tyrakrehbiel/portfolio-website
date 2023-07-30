@@ -13,10 +13,6 @@
         }
     }
 
-    @each $depth, $value in vars.$shadows {
-        shadows_#{$depth}: $value;
-    }
-
     @each $variant, $properties in typ.$typography {
         @each $property, $value in map-get(typ.$typography, $variant) {
             typography_#{$variant}_#{$property}: $value;
