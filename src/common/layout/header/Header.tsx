@@ -15,15 +15,15 @@ interface AppRoute {
  */
 const routes: AppRoute[] = [
     {
-        label: 'About',
+        label: 'About Me',
         path: '/about'
     }, {
-        label: 'Portfolio',
+        label: 'View Portfolio',
         path: '/portfolio'
     }, {
         label: 'Resume'
     }, {
-        label: 'Contact',
+        label: 'Get in Touch',
         path: '/contact'
     }
 ];
