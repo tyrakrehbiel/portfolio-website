@@ -2,7 +2,29 @@
     
     .content-section-1 {
         height: calc(90vh - shape(headerHeight));
-        background-color: red;
         align-items: center;
+
+        .cta-button {
+            margin-top: 20px;
+        }
+    }
+
+    .content-section-2 {
+        background-color: palette(primary, main);
+        color: white;
+
+        .sub-section {
+            width: 50%;
+            margin: 25vh auto;
+        }
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .text {
+        margin-bottom: 10px;
+        font-weight: 400;
     }
 }
