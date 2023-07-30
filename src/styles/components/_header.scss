@@ -14,25 +14,25 @@
             max-width: 90%;
         }
 
-        .header-icon {
-            @extend .flex-center-all;
-            background-color: black;
-            height: 40px;
-            width: 40px;
-            cursor: pointer;
+        // .header-icon {
+        //     @extend .flex-center-all;
+        //     background-color: black;
+        //     height: 40px;
+        //     width: 40px;
+        //     cursor: pointer;
     
-            .header-icon-text {
-                font-size: 1.45rem;
-                color: white;
-            }
-        }
+        //     .header-icon-text {
+        //         font-size: 1.45rem;
+        //         color: white;
+        //     }
+        // }
 
-        .header-buttons {
-            padding-left: 5%;
-            gap: 20px;
-            width: 100%;
-            display: flex;
-        }
+        // .header-buttons {
+        //     padding-left: 5%;
+        //     gap: 20px;
+        //     width: 100%;
+        //     display: flex;
+        // }
     }
 }
 

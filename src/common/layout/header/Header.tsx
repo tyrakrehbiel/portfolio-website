@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { AppBar, Toolbar, Button, Typography, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon } from '@mui/icons-material';
+import logo from '../../../media/logo/android-chrome-192x192.png';
 
 interface AppRoute {
     label: string;
@@ -65,7 +66,7 @@ const Header: FC = () => {
      * Handles opening resume pdf in Google Drive in another browser tab
      */
     const openResume = () => {
-        const pdfUrl = 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing';
+        const pdfUrl = 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing'; // TODO save link in env
         
         window.open(pdfUrl, '_blank');
 
@@ -111,9 +112,12 @@ const Header: FC = () => {
         <>
             <AppBar className='header' elevation={0}>
                 <Toolbar className='header-content'>
-                    <div className='header-icon' onClick={() => navigate('/')}>
-                        <Typography className='header-icon-text' data-testid='logo-button'>tk</Typography>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <img src={logo} onClick={() => navigate('/')} style={{ height: '25px'}} />
+                        <Typography color='black' variant='h6'>Tyra Krehbiel</Typography>
+                        <Typography color='black'>Software Developer</Typography>
                     </div>
+                   
                     {showHeaderNavigation
                         ? (
                             <div className='header-buttons' data-testid='appbar-header-nav'>
