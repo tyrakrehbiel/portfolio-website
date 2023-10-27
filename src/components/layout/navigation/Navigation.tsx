@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Button, useMediaQuery, useTheme, Drawer, AppBar, Toolbar} from '@mui/material';
+import { Button, useMediaQuery, useTheme, Drawer, AppBar, Toolbar, ListItem, ListItemButton, List } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon, LinkedIn } from '@mui/icons-material';
 import { openLink } from '../../../common/utils';
@@ -84,71 +84,74 @@ const Navigation: FC = () => {
         closeDrawer();
     };
 
-    /**
-     * Map routes to navigation buttons
-     * @param drawer 
-     * @returns 
-     */
-    const routeButtons = (drawer: boolean) => (
-        routes.map((route) => {
-            const drawerClass = drawer ? 'drawer' : '';
-            const activeClass = location.pathname == route.path ? 'active' : '';
-            return (
-                <Button
-                    className={`header-button ${drawerClass} ${activeClass}`}
-                    key={route.label}
-                    onClick={() => onClick(route)}
-                >
-                    {route.label}
-                </Button>
-            );
-        })
-    );
-
-    const toLinkedIn = () => {
-        openLink('https://linkedin.com');
-        closeDrawer();
-    };
-
-    const LinkedInBtn = () => (
-        <div className='icon-button' onClick={toLinkedIn}>
-            <LinkedIn />
-        </div>
-    );
-
     return (
-        <>
-            <AppBar className='navigation' elevation={0}>
-                <Toolbar className='content'>
-                    <div className='logo' onClick={() => navigate('/')}>
-                        {logo}
-                    </div>
-                    <div className='routes'>
-                        {mobile ? (
+        <AppBar className='navigation' elevation={0}>
+            <Toolbar className='content'>
+                <div className='logo' onClick={() => navigate('/')}>
+                    {logo}
+                </div>
+                <div className='routes'>
+                    {mobile ? (
+                        <>
+                            <LinkedInBtn closeDrawer={closeDrawer} />
                             <div className='icon-button large' onClick={toggleDrawer}>
                                 <MenuIcon />
                             </div>
-                        ) : (
-                            <>
-                                <div>{routeButtons(false)}</div>
-                                <LinkedInBtn />
-                            </>
-                        )}
-                    </div>
-                </Toolbar>
-            </AppBar>
+                        </>
+                    ) : (
+                        <>
+                            <div>
+                                {routes.map((route) => (
+                                    <Button
+                                        className={`navigation-button ${location.pathname == route.path ? 'active' : ''}`}
+                                        key={route.label}
+                                        onClick={() => onClick(route)}
+                                    >
+                                        {route.label}
+                                    </Button>
+                                ))}
+                            </div>
+                            <LinkedInBtn closeDrawer={closeDrawer} />
+                        </>
+                    )}
+                </div>
+            </Toolbar>
             <Drawer
-                className='header-drawer'
+                className='navigation-drawer'
                 anchor='top'
                 open={openDrawer}
                 onClose={toggleDrawer}
-                data-testid='drawer-header-nav'
             >
-                {routeButtons(true)}
-                <LinkedInBtn />
+                <div className='drawer-list'>
+                    {routes.map((route) => (
+                        <div
+                            key={route.label}
+                            className='drawer-list-item'
+                            onClick={() => onClick(route)}
+                        >
+                            <div className={`drawer-list-item-content ${location.pathname == route.path ? 'active' : ''}`}>
+                                {route.label}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </Drawer>
-        </>
+        </AppBar>
     );
 };
 
 export default Navigation;
+
+const LinkedInBtn: React.FC<{ closeDrawer: () => void; }> = (props) => {
+
+    const toLinkedIn = () => {
+        openLink('https://linkedin.com');
+        props.closeDrawer();
+    };
+
+    return (
+        <div className='icon-button' onClick={toLinkedIn}>
+            <LinkedIn />
+        </div>
+    );
+};

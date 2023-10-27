@@ -58,7 +58,7 @@ describe('Header', () => {
         render(<Header />);
 
         // get all navigation buttons
-        const buttons = screen.getAllByTestId('header-button');
+        const buttons = screen.getAllByTestId('navigation-button');
         expect(buttons).toHaveLength(4);
 
         // click contact tab
