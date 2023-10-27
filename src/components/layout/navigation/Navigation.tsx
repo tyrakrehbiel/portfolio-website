@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Button, useMediaQuery, useTheme, Drawer} from '@mui/material';
+import { Button, useMediaQuery, useTheme, Drawer, AppBar, Toolbar} from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon, LinkedIn } from '@mui/icons-material';
 import { openLink } from '../../../common/utils';
@@ -118,8 +118,8 @@ const Navigation: FC = () => {
 
     return (
         <>
-            <nav className='navigation'>
-                <div className='content'>
+            <AppBar className='navigation' elevation={0}>
+                <Toolbar className='content'>
                     <div className='logo' onClick={() => navigate('/')}>
                         {logo}
                     </div>
@@ -135,8 +135,8 @@ const Navigation: FC = () => {
                             </>
                         )}
                     </div>
-                </div>
-            </nav>
+                </Toolbar>
+            </AppBar>
             <Drawer
                 className='header-drawer'
                 anchor='top'

@@ -5,6 +5,7 @@
     flex-wrap: nowrap;
     width: 100%;
     height: shape(headerHeight) !important;
+    background-color: palette(background, default) !important;
 
     .content {
         display: flex;
@@ -24,7 +25,7 @@
             color: palette(primary, contrastText);
             font-size: 1.875rem;
             font-weight: 600;
-            padding: 0 2px;
+            padding: 0 4px;
             white-space: nowrap;
         }
 
