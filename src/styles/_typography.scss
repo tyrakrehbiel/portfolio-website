@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+$typography: (
+    font-family: ("Montserrat", "Work Sans", sans-serif),
+    h1: (
+        fontFamily: 'Montserrat',
+        fontWeight: 400,
+        fontSize: 3rem
+    ),
+    h2: (
+        fontFamily: 'Montserrat',
+        fontWeight: 400,
+        fontSize: 2.25rem
+    ),
+    h3: (
+        fontFamily: 'Montserrat',
+        fontWeight: 400,
+        fontSize: 2rem
+    ),
+    subtitle1: (
+        fontFamily: 'Work Sans',
+        fontWeight: 400,
+        fontSize: 1.1rem
+    ),
+    body1: (
+        fontFamily: 'Work Sans',
+        fontWeight: 300,
+        fontSize: 0.95rem
+    ),
+    button: (
+        fontFamily: 'Work Sans',
+        fontWeight: 500,
+        fontSize: 0.75rem,
+        textTransform: uppercase
+    )
+);

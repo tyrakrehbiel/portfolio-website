@@ -1,16 +1,20 @@
+// Global Styling
 @import
-    './base/colors',
-    './base/global',
-    './base/typography',
-    './base/variables',
-    './base/mixins',
-    './base/theme.module';
+    './colors',
+    './global',
+    './typography',
+    './variables',
+    './mixins',
+    './theme.module',
+    './buttons';
 
+// components
 @import
-    './components/buttons',
-    './components/header',
-    './components/layout';
+    '../components/layout/layout',
+    '../components/layout/footer/footer',
+    '../components/layout/navigation/navigation';
 
+// pages
 @import
-    './pages/not-found',
-    './pages/home';
+    '../pages/not-found/not-found',
+    '../pages/home/home';

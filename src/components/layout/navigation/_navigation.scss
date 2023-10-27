@@ -1,0 +1,95 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: shape(headerHeight) !important;
+    background-color: palette(background, default) !important;
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: breakpoints(xl);
+        padding: 0 5%;
+        @media(max-width: breakpoints(sm)) {
+            justify-content: space-between;
+        }
+
+        .logo {
+            cursor: pointer;
+            margin-right: 20px;
+            background-color: palette(primary, main);
+            color: palette(primary, contrastText);
+            font-size: 1.875rem;
+            font-weight: 600;
+            padding: 0 4px;
+            white-space: nowrap;
+        }
+
+        .routes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: nowrap;
+            gap: 5px;
+            
+            @media (max-width: 700px) {
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+.navigation-drawer {
+    .MuiPaper-root {
+        padding-top: shape(headerHeight);
+        background-color: palette(background, default);
+        padding-bottom: 20px;
+    }
+    .drawer-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .drawer-list-item {
+            text-align: right;
+            cursor: pointer;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: flex-end;
+
+            &:hover {
+                background-color: lighten(palette(primary, main), 47%);
+                
+            }
+
+            .drawer-list-item-content {
+                @extend .navigation-button;
+                width: max-content;
+            }
+        }
+    }
+}
+
+.navigation-button {
+    color: palette(text, primary) !important;
+    text-transform: uppercase;
+    font-size: 0.8rem !important;
+
+    &:hover, &.active {
+        color: palette(primary, main) !important;
+    }
+    &.active {
+        border-bottom: 2px solid palette(primary, main);
+    }
+    &.drawer {
+        margin: auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: max-content;
+    }
+}
