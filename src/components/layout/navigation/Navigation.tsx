@@ -1,35 +1,10 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Button, useMediaQuery, useTheme, Drawer, AppBar, Toolbar, ListItem, ListItemButton, List } from '@mui/material';
+import { AppBar, Button, Drawer, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, LinkedIn } from '@mui/icons-material';
-import { openLink } from '../../../common/utils';
-
-interface AppRoute {
-    label: string;
-    path?: string;
-    url?: string;
-}
-
-/**
- * List of all application routes. Will be mapped to buttons in navigation.
- * 
- * If no path is provided, a custom onClick will be used
- */
-const routes: AppRoute[] = [
-    {
-        label: 'About',
-        path: '/about'
-    }, {
-        label: 'Projects',
-        path: '/projects'
-    }, {
-        label: 'Experience',
-        url: 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing'
-    }, {
-        label: 'Get in Touch',
-        path: '/contact'
-    }
-];
+import { Menu as MenuIcon } from '@mui/icons-material';
+import { openLink, routes } from '../../../common/utils';
+import { AppRoute } from '../../../@types';
+import LinkedInBtn from './LinkedInBtn';
 
 const logo = 'Tyra K.';
 
@@ -45,7 +20,6 @@ const Navigation: FC = () => {
     const theme = useTheme();
     
     /** show header navigation instead of drawer for screen sizes larger than sm breakpoint */
-    // const mobile = useMediaQuery(theme.breakpoints.down('sm'));
     const mobile = useMediaQuery('(max-width:700px)');
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -84,6 +58,10 @@ const Navigation: FC = () => {
         closeDrawer();
     };
 
+    const activeClass = (path?: string) => {
+        return location.pathname == path ? 'active' : '';
+    };
+
     return (
         <AppBar className='navigation' elevation={0}>
             <Toolbar className='content'>
@@ -103,7 +81,7 @@ const Navigation: FC = () => {
                             <div>
                                 {routes.map((route) => (
                                     <Button
-                                        className={`navigation-button ${location.pathname == route.path ? 'active' : ''}`}
+                                        className={`navigation-button ${activeClass(route.path)}`}
                                         key={route.label}
                                         onClick={() => onClick(route)}
                                     >
@@ -129,7 +107,7 @@ const Navigation: FC = () => {
                             className='drawer-list-item'
                             onClick={() => onClick(route)}
                         >
-                            <div className={`drawer-list-item-content ${location.pathname == route.path ? 'active' : ''}`}>
+                            <div className={`drawer-list-item-content ${activeClass(route.path)}`}>
                                 {route.label}
                             </div>
                         </div>
@@ -141,17 +119,3 @@ const Navigation: FC = () => {
 };
 
 export default Navigation;
-
-const LinkedInBtn: React.FC<{ closeDrawer: () => void; }> = (props) => {
-
-    const toLinkedIn = () => {
-        openLink('https://linkedin.com');
-        props.closeDrawer();
-    };
-
-    return (
-        <div className='icon-button' onClick={toLinkedIn}>
-            <LinkedIn />
-        </div>
-    );
-};
