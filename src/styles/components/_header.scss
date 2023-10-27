@@ -1,19 +1,43 @@
-.header {
+.navigation {
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: palette(background, default) !important;
+    flex-wrap: nowrap;
+    width: 100%;
     height: shape(headerHeight) !important;
 
-    .header-content {
+    .content {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: breakpoints(xl);
+        padding: 0 5%;
         @media(max-width: breakpoints(sm)) {
-            width: 100%;
             justify-content: space-between;
         }
-    
+
         .logo {
-            height: 25px;
             cursor: pointer;
             margin-right: 20px;
+            background-color: palette(primary, main);
+            color: palette(primary, contrastText);
+            font-size: 1.875rem;
+            font-weight: 600;
+            padding: 0 2px;
+            white-space: nowrap;
+        }
+
+        .routes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: nowrap;
+            
+            @media (max-width: 700px) {
+                justify-content: flex-end;
+            }
         }
     }
 }

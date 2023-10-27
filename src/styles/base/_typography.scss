@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
 $typography: (
-    font-family: ("Open Sans", sans-serif),
+    font-family: ("Montserrat", "Work Sans", sans-serif),
     h1: (
-        fontFamily: 'Merriweather',
+        fontFamily: 'Montserrat',
         fontWeight: 400,
         fontSize: 3rem
     ),
     h2: (
-        fontFamily: 'Merriweather',
+        fontFamily: 'Montserrat',
         fontWeight: 400,
         fontSize: 2.25rem
     ),
     h3: (
-        fontFamily: 'Merriweather',
+        fontFamily: 'Montserrat',
         fontWeight: 400,
         fontSize: 2rem
     ),
     subtitle1: (
-        fontFamily: 'Open Sans',
+        fontFamily: 'Work Sans',
         fontWeight: 400,
         fontSize: 1.1rem
     ),
     body1: (
-        fontFamily: 'Open Sans',
+        fontFamily: 'Work Sans',
         fontWeight: 300,
         fontSize: 0.95rem
     ),
     button: (
-        fontFamily: 'Open Sans',
+        fontFamily: 'Work Sans',
         fontWeight: 500,
         fontSize: 0.75rem,
         textTransform: uppercase

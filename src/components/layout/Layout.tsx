@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Header from './header/Header';
+import Header from './navigation/Navigation';
 import Footer from './footer/Footer';
 
 /**

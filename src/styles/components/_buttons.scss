@@ -1,6 +1,7 @@
 .header-button {
     color: palette(text, primary) !important;
     text-transform: uppercase;
+    font-size: 0.8rem !important;
 
     &:hover, &.active {
         color: palette(primary, main) !important;
@@ -18,4 +19,22 @@
 
 button {
     border-radius: 0 !important;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: palette(text, primary);
+    &:hover {
+        color: palette(primary, main);
+    }
+    svg {
+        font-size: 2rem;
+    }
+    &.large {
+        svg {
+            font-size: 2.5rem;
+        }
+    }
 }

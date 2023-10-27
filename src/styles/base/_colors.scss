@@ -1,16 +1,18 @@
 $palette: (
     primary: (
-        main: #4444bb
+        main: #4444bb,
+        contrastText: #ffffff
     ),
     secondary: (
-        main: #5a9f37
+        main: #5a9f37,
+        contrastText: #000000
     ),
     text: (
         primary: #000000,
         secondary: #444444
     ),
     background: (
-        default: #eaeaea,
-        paper: #ffffff
+        default: #ffffff,
+        paper: #eaeaea
     )
 );

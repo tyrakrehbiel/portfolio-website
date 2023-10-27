@@ -1,12 +1,13 @@
 import React, { FC, useState, useEffect } from 'react';
-import { AppBar, Toolbar, Button, useMediaQuery, useTheme, IconButton, Drawer } from '@mui/material';
+import { Button, useMediaQuery, useTheme, Drawer} from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon } from '@mui/icons-material';
-import logo from '../../../media/logo/android-chrome-192x192.png';
+import { Menu as MenuIcon, LinkedIn } from '@mui/icons-material';
+import { openLink } from '../../../common/utils';
 
 interface AppRoute {
     label: string;
     path?: string;
+    url?: string;
 }
 
 /**
@@ -16,32 +17,36 @@ interface AppRoute {
  */
 const routes: AppRoute[] = [
     {
-        label: 'About Me',
+        label: 'About',
         path: '/about'
     }, {
-        label: 'View Portfolio',
-        path: '/portfolio'
+        label: 'Projects',
+        path: '/projects'
     }, {
-        label: 'Resume'
+        label: 'Experience',
+        url: 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing'
     }, {
         label: 'Get in Touch',
         path: '/contact'
     }
 ];
 
+const logo = 'Tyra K.';
+
 /**
- * Header navigation component. Converts to a drawer on small screens.
+ * Navigation navigation component. Converts to a drawer on small screens.
  * TODO: on portfolio click, open sub menu with art vs case studies
  * @returns 
  */
-const Header: FC = () => {
+const Navigation: FC = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
     const theme = useTheme();
     
     /** show header navigation instead of drawer for screen sizes larger than sm breakpoint */
-    const showHeaderNavigation = useMediaQuery(theme.breakpoints.up('sm'));
+    // const mobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const mobile = useMediaQuery('(max-width:700px)');
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
@@ -62,14 +67,7 @@ const Header: FC = () => {
         setOpenDrawer(p => !p);
     };
 
-    /**
-     * Handles opening resume pdf in Google Drive in another browser tab
-     */
-    const openResume = () => {
-        const pdfUrl = 'https://drive.google.com/file/d/1lZT_jhyvQS83g-3mvYOBzQUFKRUyvd55/view?usp=sharing'; // TODO save link in env
-        
-        window.open(pdfUrl, '_blank');
-
+    const closeDrawer = () => {
         setOpenDrawer(false);
     };
 
@@ -77,13 +75,13 @@ const Header: FC = () => {
      * Handles clicking navigation button to either navigate to specified route path, or custom onClick
      * @param route 
      */
-    const handleClick = (route: AppRoute) => {
-        if (route.label == 'Resume') {
-            openResume();
+    const onClick = (route: AppRoute) => {
+        if (route.url) {
+            openLink(route.url);
         } else if (route.path) {
             navigate(route.path);
         }
-        setOpenDrawer(false);
+        closeDrawer();
     };
 
     /**
@@ -99,8 +97,7 @@ const Header: FC = () => {
                 <Button
                     className={`header-button ${drawerClass} ${activeClass}`}
                     key={route.label}
-                    onClick={() => handleClick(route)}
-                    data-testid='header-button'
+                    onClick={() => onClick(route)}
                 >
                     {route.label}
                 </Button>
@@ -108,21 +105,38 @@ const Header: FC = () => {
         })
     );
 
+    const toLinkedIn = () => {
+        openLink('https://linkedin.com');
+        closeDrawer();
+    };
+
+    const LinkedInBtn = () => (
+        <div className='icon-button' onClick={toLinkedIn}>
+            <LinkedIn />
+        </div>
+    );
+
     return (
         <>
-            <AppBar className='header' elevation={0}>
-                <Toolbar className='header-content'>
-                    <img src={logo} className='logo' onClick={() => navigate('/')} />
-                    {showHeaderNavigation
-                        ? <div className='header-buttons' data-testid='appbar-header-nav'>
-                            {routeButtons(false)}
-                        </div>
-                        : <IconButton onClick={toggleDrawer} data-testid='nav-menu-button'>
-                            <MenuIcon />
-                        </IconButton>
-                    }
-                </Toolbar>
-            </AppBar>
+            <nav className='navigation'>
+                <div className='content'>
+                    <div className='logo' onClick={() => navigate('/')}>
+                        {logo}
+                    </div>
+                    <div className='routes'>
+                        {mobile ? (
+                            <div className='icon-button large' onClick={toggleDrawer}>
+                                <MenuIcon />
+                            </div>
+                        ) : (
+                            <>
+                                <div>{routeButtons(false)}</div>
+                                <LinkedInBtn />
+                            </>
+                        )}
+                    </div>
+                </div>
+            </nav>
             <Drawer
                 className='header-drawer'
                 anchor='top'
@@ -131,9 +145,10 @@ const Header: FC = () => {
                 data-testid='drawer-header-nav'
             >
                 {routeButtons(true)}
+                <LinkedInBtn />
             </Drawer>
         </>
     );
 };
 
-export default Header;
+export default Navigation;
