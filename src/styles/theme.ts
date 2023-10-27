@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import tm from './base/_theme.module.scss';
+import tm from './_theme.module.scss';
 import zIndex from '@mui/material/styles/zIndex';
 
 type TextTransform = 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'full-width' | 'full-size-kana';
